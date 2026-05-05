@@ -8,8 +8,9 @@ import matplotlib.pyplot as plt
 # ============== ARGUMENTS =====================================
 path = f"{sys.argv[1]}/"
 age = float(sys.argv[2])
-percentile = float(sys.argv[3]) if len(sys.argv) > 3 else 75.0
 # ==============================================================
+
+threshold = 0.015
 
 md = np.array([])
 file_list = os.listdir(path)
@@ -89,8 +90,6 @@ for i in range(len(new_star_data["masses"]) - 1):
     d = np.sqrt(x_diff + y_diff)
     distances = np.append(distances, d)
 
-threshold = np.percentile(distances, percentile)
-
 masses_to_simulate = []
 
 for i in range(len(distances)):
@@ -105,7 +104,5 @@ for i in range(len(distances)):
             masses_to_simulate.append(new_mass)
 
 masses_to_simulate = np.sort(np.array(masses_to_simulate))
-print("(", end="")
-for i in masses_to_simulate:
-    print(f"{i:.4f}", end=" ")
-print(")", end="")
+
+print(" ".join(f"{m:.4f}" for m in masses_to_simulate))
