@@ -2,6 +2,12 @@
 
 This is an adaptive mesh refinement tool for use with MESA simulations for automatic density adjustments for isochrone tracks
 
+## Conda on ARCC
+- ```module load arcc/1.0```
+- ```module load miniconda3/24.3.0```
+- ```conda create --name environment_name python=3.14```
+- ```conda activate environment_name```
+
 ## How to use
 1) ```git clone https://github.com/Greg-Saul/ARCC_AMR_mass_selection.git```
 2) ```pip install -r requirements```
