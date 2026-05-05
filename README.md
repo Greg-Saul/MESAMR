@@ -1,4 +1,4 @@
-# ARCC_AMR_mass_selection
+# MESAMR
 
 This is an adaptive mesh refinement tool for use with MESA simulations for automatic density adjustments for isochrone tracks
 
